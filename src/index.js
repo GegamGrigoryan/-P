@@ -7,7 +7,7 @@ const heroes = [
   "Zombie",
 ];
 
-class Character {
+export class Character {
   constructor(name, type, health, level) {
     this.health = 70;
     this.level = 1;
@@ -84,7 +84,7 @@ class Daemon extends Character {
   }
 }
 
-const bowerman = new Bowerman("Bowerman", "Bowerman");
+export const bowerman = new Bowerman("Bowerman", "Bowerman");
 const swordsman = new Swordsman("Swordsman", "Swordsman");
 const magician = new Magician("Magician", "Magician");
 const daemon = new Daemon("Daemon", "Daemon");
