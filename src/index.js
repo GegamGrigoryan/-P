@@ -8,8 +8,8 @@ const heroes = [
 ];
 
 export class Character {
-  constructor(name, type, health, level) {
-    this.health = 70;
+  constructor(name, type) {
+    this.health = 100;
     this.level = 1;
     if (!(name.length >= 2 && name.length <= 10 && typeof name == "string")) {
       throw new Error("min - 2 символа, max - 10");
@@ -25,7 +25,7 @@ export class Character {
   }
   levelUp() {
     if (this.health == 0) {
-      throw new Error("Нельзя повысить левел умершего,ты мерт нига");
+      throw new Error("Нельзя повысить левел умершего");
     } else {
       this.level++;
       this.health = 100;
@@ -41,7 +41,7 @@ export class Character {
   }
 }
 
-class Bowerman extends Character {
+export class Bowerman extends Character {
   constructor(name, type, health, level) {
     super(name, type, health, level);
     this.attack = 25;
@@ -89,3 +89,4 @@ const swordsman = new Swordsman("Swordsman", "Swordsman");
 const magician = new Magician("Magician", "Magician");
 const daemon = new Daemon("Daemon", "Daemon");
 const undead = new Undead("Undead", "Undead");
+const zombie = new Zombie("Zombie", "Zombie");
